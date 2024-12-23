@@ -6,11 +6,29 @@
   <title>Philosophy & Pedagogy</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    /* Basic reset and font */
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
       scroll-behavior: smooth;
     }
+    
+    /* Header style */
+    header {
+      background-image: url('your-header-image.jpg'); /* Replace with your image */
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    
+    header h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+
+    /* Navigation */
     nav {
       position: fixed;
       top: 0;
@@ -27,6 +45,11 @@
       text-decoration: none;
       font-size: 16px;
     }
+    nav a:hover {
+      color: #ddd;
+    }
+    
+    /* Full-screen sections */
     section {
       height: 100vh; /* Full-screen height */
       display: flex;
@@ -34,7 +57,7 @@
       justify-content: center;
       text-align: center;
       padding: 20px;
-      color: #fff;
+      color: white;
     }
     #about-us {
       background: #6C757D; /* Dark gray */
@@ -45,6 +68,7 @@
     #blog {
       background: #28A745; /* Green */
     }
+
     footer {
       background: #333;
       color: #fff;
@@ -54,29 +78,7 @@
   </style>
 </head>
 <body>
-  <nav>
-    <a href="#about-us">About Us</a>
-    <a href="#media">Media</a>
-    <a href="#blog">Blog</a>
-  </nav>
 
-  <section id="about-us">
-    <h1>About Us</h1>
-    <p>Welcome to the About Us section. Learn more about our mission and values here.</p>
-  </section>
-
-  <section id="media">
-    <h1>Media</h1>
-    <p>Explore our videos, podcasts, and visual content here.</p>
-  </section>
-
-  <section id="blog">
-    <h1>Blog</h1>
-    <p>Discover thought-provoking articles and discussions in this section.</p>
-  </section>
-
-  <footer>
-    <p>&copy; 2024 Philosophy & Pedagogy</p>
-  </footer>
-</body>
-</html>
+  <!-- Header Section -->
+  <header>
+ 

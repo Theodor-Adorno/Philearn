@@ -12,18 +12,16 @@
       font-family: 'Roboto', sans-serif;
       scroll-behavior: smooth;
     }
-    
-    /* Header style */
+
+    /* Header style (no image, just background color for testing) */
     header {
-      background-image: url(https://i0.wp.com/tsofa.com/wp-content/uploads/2018/07/plato-header.jpg?fit=750%2C200&ssl=1); /* Replace with your image */
-      background-size: cover;
-      background-position: center;
+      background-color: #333; /* Dark background for testing */
       color: white;
       text-align: center;
       padding: 100px 20px;
       height: 100vh; /* Full height for the header */
     }
-    
+
     header h1 {
       font-size: 3em;
       margin: 0;
@@ -40,8 +38,52 @@
       padding: 10px 0;
       text-align: center;
     }
+
     nav a {
       color: #fff;
       margin: 0 15px;
       text-decoration: none;
-      
+      font-size: 16px;
+    }
+    nav a:hover {
+      color: #ddd;
+    }
+
+    /* Full-screen sections */
+    section {
+      min-height: 100vh; /* Full-screen height */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      color: white;
+    }
+
+    #about-us {
+      background-color: #6C757D; /* Dark gray */
+    }
+    #media {
+      background-color: #007BFF; /* Blue */
+    }
+    #blog {
+      background-color: #28A745; /* Green */
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <h1>Welcome to Philosophy & Pedagogy</h1>
+    <p>Your journey to deep philosophical understanding begins here.</p>
+  </header>
+
+  <!-- Na

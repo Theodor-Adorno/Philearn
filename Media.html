@@ -21,9 +21,26 @@
       color: #fff;
       text-align: center;
       padding: 100px 20px;
+      position: relative;
     }
     header h1 {
       font-size: 3em;
+    }
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .back-button:hover {
+      background-color: #555;
     }
     section {
       padding: 40px 20px;
@@ -68,6 +85,7 @@
 </head>
 <body>
   <header>
+    <a href="index.html" class="back-button">Volver a la página principal</a>
     <h1>Medios</h1>
   </header>
   <main>

@@ -37,22 +37,25 @@
     header h1 {
       font-size: 3em;
     }
-    .back-button {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      background-color: #333;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      font-size: 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-      text-decoration: none;
-    }
-    .back-button:hover {
-      background-color: #555;
-    }
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: transparent; /* Transparent background */
+  color: #fff; /* White text for visibility */
+  border: 1px solid #fff; /* Add a border for definition */
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s; /* Smooth hover effect */
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.2); /* Slightly visible background on hover */
+  color: #fff; /* Ensure text remains white on hover */
+}
     section {
       position: relative;
       z-index: 2;

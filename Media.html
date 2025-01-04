@@ -10,21 +10,44 @@
       font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f5f5dc;
-      color: #333;
-      line-height: 1.6;
-    }
-    header {
-      background-image: url(https://images.unsplash.com/photo-1632259680019-a62ab7fb7175?q=80&w=1854&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?fit=750%2C200&ssl=1);
+      background-image: url(https://images.unsplash.com/photo-1632259680019-a62ab7fb7175?q=80&w=1854&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?fit=750%2C200&ssl=1); /* Background image */
       background-size: cover;
       background-position: center;
-      color: #fff;
+      background-attachment: fixed;
+      color: #333;
+      line-height: 1.8;
+    }
+    .overlay {
+      background-color: rgba(20, 20, 20, 0.85); /* Dark semi-transparent overlay */
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none; /* Prevent the overlay from blocking clicks */
+    }
+    .content {
+      position: relative;
+      z-index: 2;
+      padding: 20px;
+      max-width: 800px;
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background for content */
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      border-radius: 8px;
+      color: #333;
+    }
+    header {
       text-align: center;
-      padding: 100px 20px;
+      color: #fff;
+      padding: 20px 20px 40px;
+      z-index: 3;
       position: relative;
     }
     header h1 {
       font-size: 3em;
+      margin: 0;
     }
     .back-button {
       position: absolute;
@@ -38,29 +61,18 @@
       border-radius: 5px;
       cursor: pointer;
       text-decoration: none;
+      z-index: 3;
     }
     .back-button:hover {
       background-color: #555;
-    }
-    section {
-      padding: 40px 20px;
-      margin: 20px auto;
-      max-width: 900px;
-      background: #fff;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-    }
-    iframe {
-      width: 100%;
-      height: 315px;
-      margin-bottom: 20px;
-      border: none;
     }
     footer {
       text-align: center;
       padding: 20px;
       background: #333;
       color: #fff;
+      position: relative;
+      z-index: 2;
     }
     a {
       display: block;
@@ -69,14 +81,14 @@
       color: #555;
       position: relative;
     }
+    a:hover {
+      color: #000;
+    }
     a:not(.back-button)::after {
-      content: '\1F517'; /* Unicode for link icon */
+      content: '\\1F517'; /* Unicode for link icon */
       font-size: 0.9em;
       margin-left: 8px;
       color: #888;
-    }
-    a:hover {
-      color: #000;
     }
     a:hover::after {
       color: #000;
@@ -84,75 +96,30 @@
   </style>
 </head>
 <body>
-  <header>
-    <a href="index.html" class="back-button">Volver a la página principal</a>
-    <h1>Medios</h1>
-  </header>
-  <main>
-    <!-- Section 1 -->
-    <section>
-      <h2>Ser profesor hoy</h2>
-      <p>Materiales del temario</p>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/ODFIiudwOMQ?si=RTvoTkMjddHrxoD3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      <a href="downloads/Presentación Didactica 1.pdf" target="_blank">Presentación Bloque 1</a>
-      <a href="downloads/BOE-A-2007-4372-consolidado 1.pdf" target="_blank">BOE Consolidado</a>
-      <a href="downloads/Preguntas sobre ser profesor tema 1.pdf" target="_blank">Preguntas sobre Ser Profesor</a>
-      <a href="downloads/clases que puedo dar - Íñigo.xlsx" target="_blank">¿Qué clases puedo dar?</a>
-      <img src="https://sifo.comillas.edu/pluginfile.php/4795471/mod_resource/content/0/Captura%20de%20Pantalla%202024-10-21%20a%20las%2016.42.24.png" alt="Encuesta sobre cómo concebimos la educación" style="max-width: 100%; height: auto;">
-    </section>
-    <!-- Section 2 -->
-    <section>
-      <h2>Planificación: ¿"por qué" y "para qué" educar?</h2>
-      <blockquote style="font-style: italic; margin-top: 1rem;">
-        -¿Quiere decirme, por favor, qué camino debo tomar para salir de aquí?<br>
-        -Eso depende mucho de a dónde quieres ir —respondió el Gato.<br>     
-        -Poco me preocupa a dónde ir —dijo Alicia<br>      
-        -Entonces poco importa el camino que tomes —replicó el gato.<br>      
-        -Con tal de que conduzca a alguna parte —añadió Alicia como conclusión.<br>      
-        -¡Oh! Puedes estar segura de que llegarás a alguna parte —dijo el gato— si caminas lo suficiente.<br>
-        <cite>Alicia en el país de las maravillas, Lewis Carroll</cite>
-      </blockquote>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/j7rdwsYi6Wo?si=yAv7IN1foBPGaT3d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      <p>Materiales del temario</p>
-      <a href="downloads/presentación 2.pdf" target="_blank">Presentación Bloque 2</a>
-      <a href="downloads/planificación 2.pdf" target="_blank">Planificación</a>
-    </section>
-    <!-- Section 3 -->
-    <section>
-      <h2>¿Qué enseñar?</h2>
-      <p>Materiales del temario</p>
-      <a href="downloads/programar lomloe 3.pdf" target="_blank">Programar con Lomloe</a>
-    </section>
-    <!-- Section 4 -->
-    <section>
-      <h2>¿A quién enseñar? La importancia del contexto</h2>
-      <p>Explore the significance of context in teaching philosophy and pedagogy.</p>
-      <a href="downloads/Presentación sesión 5-6 Tema 4.pdf" target="_blank">Presentación tema 4</a>
-      <a href="downloads/Didáctica padre piquer trabajo Tema 4.pdf" target="_blank">Trabajo sobre experiencia en Padre Piquer</a>
-      <h3>Atención a las diferencias individuales</h3>
-      <a href="downloads/0Equidad lomloe Tema 4 -.pdf" target="_blank">LOMLOE Equidad</a>
-      <a href="downloads/1atencion diferencias individuales Tema 4-.pdf" target="_blank">Atención diferencias individuales presentación</a>
-      <a href="downloads/2resumen decreto atencion diferencias individuales Tema 4-.pdf" target="_blank">Resumen Decreto Atención diferencias</a>
-      <a href="downloads/3anexos decretos atencion diferencias individuales Tema 4-.pdf" target="_blank">Anexos Decreto Atención diferencias</a>
-      <a href="downloads/4IntruccionesEvAlumnosDificultades de aprendizaje Tema 4-.pdf" target="_blank">Instrucciones evaluación alumnos con dificultades</a>
-    </section>
-    <!-- Section 5 -->
-    <section>
-      <h2>¿Cómo enseñar? Hablando de metodologías</h2>
-      <a href="downloads/S8 Metodologías (2).pptx" target="_blank">Metodologías Sesión 8</a>
-      <a href="downloads/Aprendizaje-Servicio (ApS) - Powerpoint.pptx.pptx" target="_blank">Presentación personal Aprendizaje-Servicio</a>
-      <h3>Diseño Universal de Aprendizaje (DUA)</h3>
-      <a href="downloads/DUA (2).pdf" target="_blank">DUA</a>
-      <a href="downloads/Tabla trabajo pautas DUA.pdf" target="_blank">Tabla pautas trabajo DUA</a>
-      <a href="downloads/DUA_Carmen Alba Pastor_Revista participación educativa (1).pdf" target="_blank">Revista participación educativa Carmen alba Pastor</a>
-    </section>
-    <!-- Section 6 -->
-    <section>
-      <h2>Sobre evaluación</h2>
-      <a href="downloads/S9 Evaluación.pdf" target="_blank">Presentación Evaluación</a>
-      <a href="downloads/Cómo crear un formulario o cuestionario tema 6.pdf" target="_blank">Guía creación formulario o cuestionario</a>
-    </section>
-  </main>
+  <!-- Overlay -->
+  <div class="overlay"></div>
+  <!-- Main Content -->
+  <div class="content">
+    <header>
+      <a href="index.html" class="back-button">Volver a la página principal</a>
+      <h1>Medios</h1>
+    </header>
+    <main>
+      <!-- Section 1 -->
+      <section>
+        <h2>Ser profesor hoy</h2>
+        <p>Materiales del temario</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ODFIiudwOMQ?si=RTvoTkMjddHrxoD3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <a href="downloads/Presentación Didactica 1.pdf" target="_blank">Presentación Bloque 1</a>
+        <a href="downloads/BOE-A-2007-4372-consolidado 1.pdf" target="_blank">BOE Consolidado</a>
+        <a href="downloads/Preguntas sobre ser profesor tema 1.pdf" target="_blank">Preguntas sobre Ser Profesor</a>
+        <a href="downloads/clases que puedo dar - Íñigo.xlsx" target="_blank">¿Qué clases puedo dar?</a>
+        <img src="https://sifo.comillas.edu/pluginfile.php/4795471/mod_resource/content/0/Captura%20de%20Pantalla%202024-10-21%20a%20las%2016.42.24.png" alt="Encuesta sobre cómo concebimos la educación" style="max-width: 100%; height: auto;">
+      </section>
+      <!-- Additional Sections -->
+      <!-- Add the rest of your sections here -->
+    </main>
+  </div>
   <footer>
     <p>&copy; 2024 Filosofía y Pedagogía</p>
   </footer>

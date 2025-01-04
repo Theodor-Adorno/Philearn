@@ -6,17 +6,18 @@
   <title>Medios</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
+    html, body {
       font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
-      height: 100%;
+      height: 100%; /* Ensures full height for the overlay */
       background-image: url(https://images.unsplash.com/photo-1535905557558-afc4877a26fc?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?fit=750%2C200&ssl=1); /* Background image */
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
       color: #333;
       line-height: 1.8;
+    }
     .overlay {
       background-color: rgba(20, 20, 20, 0.7); /* Darker semi-transparent overlay */
       position: absolute;
@@ -81,7 +82,7 @@
       position: relative;
     }
     a:not(.back-button)::after {
-      content: '\1F517'; /* Unicode for link icon */
+      content: '\\1F517'; /* Unicode for link icon */
       font-size: 0.9em;
       margin-left: 8px;
       color: #888;
@@ -95,12 +96,13 @@
   </style>
 </head>
 <body>
-<!-- Overlay -->
+  <!-- Overlay -->
   <div class="overlay"></div>
   <header>
     <a href="index.html" class="back-button">Volver a la página principal</a>
     <h1>Medios</h1>
   </header>
+</body>
   <main>
     <!-- Section 1 -->
     <section>

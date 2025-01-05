@@ -3,54 +3,112 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us</title>
+  <title>Contáctame</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Roboto', sans-serif;
-      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      background-image: url(https://images.unsplash.com/photo-1535905557558-afc4877a26fc?q=80&w=1887&auto=format&fit=crop);
+      background-size: cover;
+      background-position: center;
       color: #333;
-      padding: 2rem;
+      line-height: 1.8;
     }
     header {
       text-align: center;
-      margin-bottom: 2rem;
+      color: #fff;
+      padding: 20px;
     }
     header h1 {
-      font-size: 2.5rem;
-      color: #4e54c8;
+      font-size: 3em;
+      margin-bottom: 10px;
     }
-    .back-button {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent black */
-  color: #fff; /* White text for contrast */
-  border: none;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background-color 0.3s; /* Smooth hover effect */
-}
-.back-button:hover {
-  background-color: rgba(51, 51, 51, 1); /* Fully opaque on hover */
-  color: #fff; /* Keep text white */
-}
-    section {
-      margin-bottom: 2rem;
+    header p {
+      font-size: 1.2em;
+    }
+    .contact-container {
+      text-align: center;
+      margin: 40px auto;
+      background: rgba(20, 20, 20, 0.95);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      max-width: 600px;
+      color: #f5f5f5;
+    }
+    .contact-container iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+      border-radius: 8px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #333;
+      color: #fff;
+      margin-top: 40px;
+    }
+    footer a {
+      color: #aaa;
+      text-decoration: none;
+    }
+    footer a:hover {
+      color: #fff;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Contact Us</h1>
+    <h1>Contacta conmigo</h1>
+    <p>¿Tienes alguna consulta o comentario? Completa el formulario y me pondré en contacto contigo lo antes posible.</p>
   </header>
-  <section>
-    <h2>We'd Love to Hear from You!</h2>
-    <p>If you have any questions or feedback, feel free to reach out.</p>
-    <p>Email: example@example.com</p>
-  </section>
+  <main>
+    <div class="contact-container">
+      <iframe 
+        src="https://docs.google.com/forms/d/e/1FAIpQLSeJOaUptJCjSJpGa1nFlAKQ8lLUurt35eVrPB3ihCpc96wyVQ/viewform?embedded=true" 
+        frameborder="0">Cargando…</iframe>
+    </div>
+  </main>
+<footer>
+  <style>
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #333;
+      color: #fff;
+      position: relative;
+      z-index: 2;
+    }
+    footer a {
+      color: #aaa; /* Slightly darker tone for links */
+      text-decoration: none;
+    }
+    footer a:hover {
+      color: #fff; /* Brightens on hover */
+    }
+    footer a.no-icon::after {
+      content: none; /* Prevents the Unicode link icon from appearing */
+    }
+    footer img {
+      margin-top: 10px;
+      width: 80px; /* Adjust size as needed */
+    }
+  </style>
+  <p>&copy; 2024 Filosofía y Pedagogía</p>
+  <p>
+    El contenido de este sitio web está registrado bajo una 
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer" class="no-icon">
+      Licencia Internacional Creative Commons Attribution-ShareAlike 4.0
+    </a>
+  </p>
+  <p>
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer" class="no-icon">
+      <img src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" alt="Licencia Creative Commons">
+    </a>
+  </p>
+</footer>
 </body>
 </html>

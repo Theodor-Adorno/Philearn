@@ -42,23 +42,23 @@
       margin: 0;
     }
     .back-button {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent black */
-  color: #fff; /* White text for contrast */
-  border: none;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background-color 0.3s; /* Smooth hover effect */
-}
-.back-button:hover {
-  background-color: rgba(51, 51, 51, 1); /* Fully opaque on hover */
-  color: #fff; /* Keep text white */
-}
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent black */
+      color: #fff; /* White text for contrast */
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s; /* Smooth hover effect */
+    }
+    .back-button:hover {
+      background-color: rgba(51, 51, 51, 1); /* Fully opaque on hover */
+      color: #fff; /* Keep text white */
+    }
     section {
       padding: 40px 20px;
       margin: 20px auto;
@@ -85,6 +85,13 @@
       position: relative;
       z-index: 2;
     }
+    video {
+      max-width: 100%;
+      height: auto;
+      border: 2px solid #4e54c8;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
   </style>
 </head>
 <body>
@@ -96,6 +103,10 @@
     </header>
     <main>
       <section>
+        <video controls>
+          <source src="downloads/Animate characters project fondo transparente.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
         <p>¡Hola!</p>
         <p>Mi nombre es Íñigo Pérez Urien y soy de Durango, una encantadora localidad en el País Vasco, España. Mi trayectoria académica y profesional se centra en el estudio de la Filosofía y la Estética, dos campos que me apasionan profundamente.</p>
         <p>He tenido el privilegio de formarme en instituciones de prestigio como la Universidad del País Vasco (UPV), la Universidad Complutense de Madrid (UCM) y la Universidad Pontificia de Comillas, donde he podido profundizar en mis intereses intelectuales.</p>

@@ -57,7 +57,7 @@
     }
     .back-button:hover {
       background-color: rgba(51, 51, 51, 1); /* Fully opaque on hover */
-      color: #fff; /* Keep text white */
+      color: #fff;
     }
     section {
       padding: 40px 20px;
@@ -86,11 +86,13 @@
       z-index: 2;
     }
     video {
-      max-width: 100%;
+      max-width: 150px;
       height: auto;
-      border: 2px solid #4e54c8;
-      border-radius: 10px;
+      border-radius: 50%;
       margin-bottom: 20px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
   </style>
 </head>
@@ -103,8 +105,8 @@
     </header>
     <main>
       <section>
-        <video controls>
-          <source src="downloads/Animate characters project fondo transparente.mp4" type="video/mp4">
+        <video autoplay muted playsinline>
+          <source src="your-video.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
         <p>¡Hola!</p>

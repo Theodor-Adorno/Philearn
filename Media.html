@@ -97,29 +97,29 @@
     a:hover::after {
       color: #888;
     }
-  .section-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
-    align-items: flex-start;
-  }
-  .text-content {
-    flex: 1;
-    max-width: 60%;
-  }
-  .image-content {
-    flex: 0 0 30%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .image-content img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
+.section-content {
+  display: flex;
+  flex-wrap: wrap; /* Ensures layout adjusts for smaller screens */
+  justify-content: space-between; /* Aligns text and image with space between */
+  gap: 20px; /* Adds space between text and image */
+  align-items: flex-start; /* Aligns items at the top */
+}
+.text-content {
+  flex: 1;
+  max-width: 60%; /* Ensures text doesn’t take up more than 60% */
+}
+.image-content {
+  flex: 0 0 30%; /* Ensures image takes up 30% of the width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.image-content img {
+  max-width: 100%; /* Prevents the image from overflowing its container */
+  height: auto; /* Maintains aspect ratio */
+  border-radius: 8px; /* Adds rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+}
   @media (max-width: 768px) {
     .section-content {
       flex-direction: column;

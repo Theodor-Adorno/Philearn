@@ -97,9 +97,13 @@
     a:hover::after {
       color: #888;
     }
+.video-content {
+  text-align: center;
+  margin-bottom: 20px; /* Space between video and content below */
+}
 .section-content {
   display: flex;
-  flex-wrap: wrap; /* Ensures layout adjusts for smaller screens */
+  flex-wrap: wrap; /* Allows content to stack on smaller screens */
   justify-content: space-between; /* Aligns text and image with space between */
   gap: 20px; /* Adds space between text and image */
   align-items: flex-start; /* Aligns items at the top */
@@ -111,8 +115,8 @@
 .image-content {
   flex: 0 0 30%; /* Ensures image takes up 30% of the width */
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* Centers the image horizontally */
+  align-items: center; /* Centers the image vertically */
 }
 .image-content img {
   max-width: 100%; /* Prevents the image from overflowing its container */
@@ -120,14 +124,15 @@
   border-radius: 8px; /* Adds rounded corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
 }
-  @media (max-width: 768px) {
-    .section-content {
-      flex-direction: column;
-    }
-    .text-content, .image-content {
-      max-width: 100%;
-    }
+@media (max-width: 768px) {
+  .section-content {
+    flex-direction: column; /* Stacks content on smaller screens */
   }
+  .text-content,
+  .image-content {
+    max-width: 100%; /* Full width for smaller screens */
+  }
+}
   </style>
 </head>
 <body>
@@ -140,22 +145,24 @@
     <!-- Section 1 -->
 <section>
   <h2>Ser profesor hoy</h2>
+  <!-- YouTube Video -->
+  <div class="video-content">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/ODFIiudwOMQ?si=RTvoTkMjddHrxoD3" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+    </iframe>
+  </div>
+  <!-- Text and Image Side by Side -->
   <div class="section-content">
-    <!-- Text Content -->
     <div class="text-content">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/ODFIiudwOMQ?si=RTvoTkMjddHrxoD3" 
-              title="YouTube video player" 
-              frameborder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-      </iframe>
       <p>Materiales del temario</p>
       <a href="downloads/Presentación Didactica 1.pdf" target="_blank">Presentación Bloque 1</a>
       <a href="downloads/BOE-A-2007-4372-consolidado 1.pdf" target="_blank">BOE Consolidado</a>
       <a href="downloads/Preguntas sobre ser profesor tema 1.pdf" target="_blank">Preguntas sobre Ser Profesor</a>
       <a href="downloads/clases que puedo dar - Íñigo.xlsx" target="_blank">¿Qué clases puedo dar?</a>
     </div>
-    <!-- Image Content -->
     <div class="image-content">
       <img src="downloads/Captura_de_Pantalla_2024-10-30.png" alt="Ser profesor hoy">
     </div>

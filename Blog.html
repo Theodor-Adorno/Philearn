@@ -93,6 +93,37 @@
       text-decoration: none;
       color: #333;
     }
+    .reflection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Space between items */
+  margin-top: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8); /* Slightly translucent background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+.reflection-item {
+  text-align: center;
+  padding: 15px;
+  background: rgba(240, 240, 240, 0.9); /* Light background */
+  border: 1px solid #ddd; /* Border */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+.reflection-item h3 {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  color: #333;
+}
+.reflection-item a {
+  text-decoration: none;
+  color: #4e54c8; /* Link color */
+  font-weight: bold;
+}
+.reflection-item a:hover {
+  color: #3b3fb5; /* Darker on hover */
+}
   </style>
 </head>
 <body>
@@ -116,6 +147,27 @@
           <li><strong>Sesión 8:</strong> <a href="downloads/Didáctica- Sesión 8.pdf" target="_blank">Rúbricas y herramientas digitales de evaluación</a></li>
         </ul>
       </section>
+      <section>
+  <h2>Reflexión sobre el aprendizaje</h2>
+  <div class="reflection-grid">
+    <div class="reflection-item">
+      <h3>¿Qué he aprendido?</h3>
+      <p><a href="downloads/Qué_he_aprendido.pdf" target="_blank">Ver reflexión</a></p>
+    </div>
+    <div class="reflection-item">
+      <h3>¿Cómo lo he aprendido?</h3>
+      <p><a href="downloads/Cómo_lo_he_aprendido.pdf" target="_blank">Ver reflexión</a></p>
+    </div>
+    <div class="reflection-item">
+      <h3>¿Para qué lo he aprendido?</h3>
+      <p><a href="downloads/Para_qué_lo_he_aprendido.pdf" target="_blank">Ver reflexión</a></p>
+    </div>
+    <div class="reflection-item">
+      <h3>¿En qué lo voy a poder aplicar?</h3>
+      <p><a href="downloads/En_qué_lo_voy_a_aplicar.pdf" target="_blank">Ver reflexión</a></p>
+    </div>
+  </div>
+</section>
     </main>
   </div>
   <footer>

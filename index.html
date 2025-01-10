@@ -39,13 +39,16 @@
     }
 .carousel img {
   width: 100%;
-  height: auto; /* Adjusts height proportionally */
-  max-height: 400px; /* Limits height to avoid overly large images */
-  object-fit: cover; /* Ensures the image fills the container without distortion */
-  display: none; /* Hides images by default */
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+  opacity: 0; /* Start images as fully transparent */
+  position: absolute; /* Stack all slides */
+  transition: opacity 0.5s ease-in-out; /* Smooth fade effect */
 }
 .carousel img.active {
-  display: block; /* Displays only the active image */
+  opacity: 1; /* Fully visible for the active image */
+  position: relative; /* Bring active slide to the front */
 }
     .carousel-controls {
       position: absolute;
@@ -268,25 +271,25 @@ footer {
 </div>
 </footer>
     <script>
-    const slides = document.querySelectorAll('.carousel img');
-    let currentSlide = 0;
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
-      });
-    }
-    document.getElementById('prev').addEventListener('click', () => {
-      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-      showSlide(currentSlide);
-    });
-    document.getElementById('next').addEventListener('click', () => {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    });
-    setInterval(() => {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    }, 5000);
+const slides = document.querySelectorAll('.carousel img');
+let currentSlide = 0;
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === index);
+  });
+}
+document.getElementById('prev').addEventListener('click', () => {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  showSlide(currentSlide);
+});
+document.getElementById('next').addEventListener('click', () => {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+});
+setInterval(() => {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}, 5000); // Adjust interval time as needed
   </script>
 </body>
 </html>

@@ -52,15 +52,17 @@
   opacity: 1; /* Fully visible for the active image */
   position: relative; /* Bring active slide to the front */
 }
-    .carousel-controls {
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      transform: translateY(-50%);
-      z-index: 3;
-    }
+.carousel-controls {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3;
+}
     .carousel-controls button {
       position: absolute;
       top: 50%; /* Align to the middle */

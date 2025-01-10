@@ -37,13 +37,16 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
       z-index: 2;
     }
-    .carousel img {
-      width: 100%;
-      display: none;
-    }
-    .carousel img.active {
-      display: block;
-    }
+.carousel img {
+  width: 100%;
+  height: auto; /* Adjusts height proportionally */
+  max-height: 400px; /* Limits height to avoid overly large images */
+  object-fit: cover; /* Ensures the image fills the container without distortion */
+  display: none; /* Hides images by default */
+}
+.carousel img.active {
+  display: block; /* Displays only the active image */
+}
     .carousel-controls {
       position: absolute;
       top: 50%;

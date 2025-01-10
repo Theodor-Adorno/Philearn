@@ -144,15 +144,15 @@
     footer a:hover {
       color: #fff;
     }
-    footer img {
-      margin-top: 10px;
-      width: 80px;
-      pointer-events: none; /* Prevent interaction during slide transitions */
-      visibility: visible; /* Force it to remain visible only in its place */
-      display: block; /* Ensure it displays properly */
-      position: static; /* Prevent unwanted interactions */
-      z-index: 1; /* Ensure it doesn't overlap carousel */
-    }
+footer img {
+  margin: 10px auto; /* Center it horizontally and adjust top margin */
+  width: 80px; /* Keep the width consistent */
+  height: auto; /* Maintain aspect ratio */
+  pointer-events: none; /* Prevent any interactions */
+  display: block; /* Ensure it's treated as a block element */
+  position: relative; /* Standard positioning for alignment */
+  z-index: 1; /* Ensure it stays beneath or in proper order */
+}
     .footer-links {
       margin-top: 10px;
     }

@@ -32,7 +32,6 @@
       position: relative;
       max-width: 800px;
       margin: 20px auto;
-      overflow: hidden;
       border-radius: 8px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
       overflow: hidden; /* Prevent content from spilling out */
@@ -52,34 +51,6 @@
   opacity: 1; /* Fully visible for the active image */
   position: relative; /* Bring active slide to the front */
 }
-.carousel-controls {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 3;
-}
-    .carousel-controls button {
-      position: absolute;
-      top: 50%; /* Align to the middle */
-      transform: translateY(-50%);
-      z-index: 4; /* Ensure they are above the carousel images */
-      background-color: rgba(0, 0, 0, 0.5);
-      border: none;
-      color: white;
-      font-size: 1.5rem;
-      padding: 10px 20px;
-      cursor: pointer;
-      border-radius: 50%;
-      transition: background-color 0.3s;
-    }
-    .carousel-controls button:hover {
-      background-color: rgba(255, 255, 255, 0.5);
-    }
     .content {
       position: relative;
       z-index: 2;

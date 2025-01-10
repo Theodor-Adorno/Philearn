@@ -28,7 +28,7 @@
   z-index: 1;
   pointer-events: none; /* Prevent overlay from blocking interactions */
 }
- .carousel {
+        .carousel {
       position: relative;
       max-width: 800px;
       margin: 20px auto;
@@ -42,26 +42,13 @@
   height: auto;
   max-height: 400px;
   object-fit: cover;
-  position: absolute; /* Stacks all slides */
-  top: 0;
-  left: 100%; /* Start slides outside the view */
-  opacity: 0; /* Initially invisible */
-  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Smooth transition */
+  opacity: 0; /* Start images as fully transparent */
+  position: absolute; /* Stack all slides */
+  transition: opacity 0.5s ease-in-out; /* Smooth fade effect */
 }
 .carousel img.active {
-  left: 0; /* Move the active slide into view */
-  opacity: 1; /* Fully visible */
-  transform: translateX(0); /* Center the active slide */
-}
-.carousel img.previous {
-  left: -100%; /* Position the previous slide to the left */
-  transform: translateX(0); /* Ensure it stays static */
-  opacity: 1; /* Make it visible */
-}
-.carousel img.next {
-  left: 100%; /* Position the next slide to the right */
-  transform: translateX(0); /* Ensure it stays static */
-  opacity: 1; /* Make it visible */
+  opacity: 1; /* Fully visible for the active image */
+  position: relative; /* Bring active slide to the front */
 }
     .carousel-controls {
       position: absolute;
@@ -87,7 +74,7 @@
     }
     .content {
       position: relative;
-      z-index: 3;
+      z-index: 2;
       padding: 20px;
       max-width: 800px;
       margin: 40px auto;
@@ -140,7 +127,7 @@ footer {
   border-radius: 8px; /* Rounded corners */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
   position: relative;
-  z-index: 4;
+  z-index: 2;
 }
     .padlet-container {
   margin: 20px auto;
@@ -286,33 +273,23 @@ footer {
     <script>
 const slides = document.querySelectorAll('.carousel img');
 let currentSlide = 0;
-function updateSlides() {
-  slides.forEach((slide, index) => {
-    slide.classList.remove('active', 'previous', 'next');
-    if (index === currentSlide) {
-      slide.classList.add('active');
-    } else if (index === (currentSlide - 1 + slides.length) % slides.length) {
-      slide.classList.add('previous');
-    } else if (index === (currentSlide + 1) % slides.length) {
-      slide.classList.add('next');
-    }
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === index);
   });
 }
 document.getElementById('prev').addEventListener('click', () => {
   currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-  updateSlides();
+  showSlide(currentSlide);
 });
 document.getElementById('next').addEventListener('click', () => {
   currentSlide = (currentSlide + 1) % slides.length;
-  updateSlides();
+  showSlide(currentSlide);
 });
-// Automatic sliding
 setInterval(() => {
   currentSlide = (currentSlide + 1) % slides.length;
-  updateSlides();
-}, 5000);
-// Initialize slides
-updateSlides();
+  showSlide(currentSlide);
+}, 5000); // Adjust interval time as needed
   </script>
 </body>
 </html>

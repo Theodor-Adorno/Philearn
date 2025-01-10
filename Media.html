@@ -38,24 +38,26 @@
   header h1 {
     font-size: 3em;
   }
-  .back-button {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent black */
-    color: #fff; /* White text for contrast */
-    border: none;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background-color 0.3s; /* Smooth hover effect */
-  }
-  .back-button:hover {
-    background-color: rgba(51, 51, 51, 1); /* Fully opaque on hover */
-    color: #fff; /* Keep text white */
-  }
+.back-button {
+  position: fixed; /* Ensures the button stays in the top left corner even when scrolling */
+  top: 20px; /* Distance from the top edge */
+  left: 20px; /* Distance from the left edge */
+  background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent black */
+  color: #fff; /* White text for contrast */
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s; /* Smooth hover effect */
+  z-index: 1000; /* Ensures it appears above other elements */
+}
+
+.back-button:hover {
+  background-color: rgba(51, 51, 51, 1); /* Fully opaque on hover */
+  color: #fff; /* Keep text white */
+}
   section {
     position: relative;
     z-index: 2;

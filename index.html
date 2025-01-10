@@ -188,12 +188,11 @@
     border: none;
     border-radius: 8px;
   }
-  footer img {
-  visibility: hidden; /* Initially hide it */
-  transition: visibility 0.5s; /* Smooth reappearance */
+footer img {
+  display: none; /* Initially remove it */
 }
-.carousel img.active + footer img {
-  visibility: visible; /* Ensure visibility when transition completes */
+.carousel img.active ~ footer img {
+  display: block; /* Show it only when the transition is complete */
 }
   </style>
 </head>

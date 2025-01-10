@@ -188,6 +188,13 @@
     border: none;
     border-radius: 8px;
   }
+  footer img {
+  visibility: hidden; /* Initially hide it */
+  transition: visibility 0.5s; /* Smooth reappearance */
+}
+.carousel img.active + footer img {
+  visibility: visible; /* Ensure visibility when transition completes */
+}
   </style>
 </head>
 <body>

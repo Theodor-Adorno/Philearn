@@ -143,7 +143,8 @@
       width: 80px;
       pointer-events: none; /* Prevent interaction during slide transitions */
       visibility: visible; /* Force it to remain visible only in its place */
-      position: relative;
+      display: block; /* Ensure it displays properly */
+      position: static; /* Prevent unwanted interactions */
       z-index: 1; /* Ensure it doesn't overlap carousel */
     }
     .footer-links {
@@ -188,9 +189,6 @@
     border: none;
     border-radius: 8px;
   }
-footer img {
-  display: none; /* Initially remove it */
-}
 .carousel img.active ~ footer img {
   display: block; /* Show it only when the transition is complete */
 }
@@ -215,9 +213,9 @@ footer img {
   </nav>
     <!-- Carousel Section -->
   <div class="carousel">
-    <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D/800x400?text=Slide+1" alt="Slide 1" class="active">
-    <img src="https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D/800x400?text=Slide+2" alt="Slide 2">
-    <img src="https://images.unsplash.com/photo-1507537417841-81e85feb9bd2?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D/800x400?text=Slide+3" alt="Slide 3">
+    <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D/800x400?text=Slide+1" alt="Slide 1" class="active carousel-slide">
+    <img src="https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D/800x400?text=Slide+2" alt="Slide 2" class="carousel-slide">
+    <img src="https://images.unsplash.com/photo-1507537417841-81e85feb9bd2?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D/800x400?text=Slide+3" alt="Slide 3" class="carousel-slide">
     <div class="carousel-controls">
       <button id="prev">&#9664;</button>
       <button id="next">&#9654;</button>
@@ -266,7 +264,7 @@ footer img {
 </div>
 </footer>
     <script>
-const slides = document.querySelectorAll('.carousel img');
+const slides = document.querySelectorAll('.carousel-slide');
 let currentSlide = 0;
 function showSlide(index) {
   slides.forEach((slide, i) => {

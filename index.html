@@ -28,7 +28,7 @@
   z-index: 1;
   pointer-events: none; /* Prevent overlay from blocking interactions */
 }
-        .carousel {
+ .carousel {
       position: relative;
       max-width: 800px;
       margin: 20px auto;
@@ -42,13 +42,26 @@
   height: auto;
   max-height: 400px;
   object-fit: cover;
-  opacity: 0; /* Start images as fully transparent */
-  position: absolute; /* Stack all slides */
-  transition: opacity 0.5s ease-in-out; /* Smooth fade effect */
+  position: absolute; /* Stacks all slides */
+  top: 0;
+  left: 100%; /* Start slides outside the view */
+  opacity: 0; /* Initially invisible */
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Smooth transition */
 }
 .carousel img.active {
-  opacity: 1; /* Fully visible for the active image */
-  position: relative; /* Bring active slide to the front */
+  left: 0; /* Move the active slide into view */
+  opacity: 1; /* Fully visible */
+  transform: translateX(0); /* Center the active slide */
+}
+.carousel img.previous {
+  left: -100%; /* Position the previous slide to the left */
+  transform: translateX(0); /* Ensure it stays static */
+  opacity: 1; /* Make it visible */
+}
+.carousel img.next {
+  left: 100%; /* Position the next slide to the right */
+  transform: translateX(0); /* Ensure it stays static */
+  opacity: 1; /* Make it visible */
 }
     .carousel-controls {
       position: absolute;
@@ -273,23 +286,33 @@ footer {
     <script>
 const slides = document.querySelectorAll('.carousel img');
 let currentSlide = 0;
-function showSlide(index) {
-  slides.forEach((slide, i) => {
-    slide.classList.toggle('active', i === index);
+function updateSlides() {
+  slides.forEach((slide, index) => {
+    slide.classList.remove('active', 'previous', 'next');
+    if (index === currentSlide) {
+      slide.classList.add('active');
+    } else if (index === (currentSlide - 1 + slides.length) % slides.length) {
+      slide.classList.add('previous');
+    } else if (index === (currentSlide + 1) % slides.length) {
+      slide.classList.add('next');
+    }
   });
 }
 document.getElementById('prev').addEventListener('click', () => {
   currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-  showSlide(currentSlide);
+  updateSlides();
 });
 document.getElementById('next').addEventListener('click', () => {
   currentSlide = (currentSlide + 1) % slides.length;
-  showSlide(currentSlide);
+  updateSlides();
 });
+// Automatic sliding
 setInterval(() => {
   currentSlide = (currentSlide + 1) % slides.length;
-  showSlide(currentSlide);
-}, 5000); // Adjust interval time as needed
+  updateSlides();
+}, 5000);
+// Initialize slides
+updateSlides();
   </script>
 </body>
 </html>

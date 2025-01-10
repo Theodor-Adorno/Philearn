@@ -28,6 +28,44 @@
   z-index: 1;
   pointer-events: none; /* Prevent overlay from blocking interactions */
 }
+        .carousel {
+      position: relative;
+      max-width: 800px;
+      margin: 20px auto;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      z-index: 2;
+    }
+    .carousel img {
+      width: 100%;
+      display: none;
+    }
+    .carousel img.active {
+      display: block;
+    }
+    .carousel-controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      z-index: 3;
+    }
+    .carousel-controls button {
+      background-color: rgba(0, 0, 0, 0.5);
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background-color 0.3s;
+    }
+    .carousel-controls button:hover {
+      background-color: rgba(255, 255, 255, 0.5);
+    }
     .content {
       position: relative;
       z-index: 2;
@@ -103,6 +141,24 @@ footer {
     <p>Un espacio dedicado a la reflexión crítica y al análisis educativo, donde la filosofía se encuentra con la práctica docente.</p>
   </header>
   <!-- Navigation Bar -->
+  <nav>
+    <a href="index.html">Página principal</a>
+    <a href="Estética.html">Materiales estética</a>
+    <a href="Media.html">Medios</a>
+    <a href="Blog.html">Blog</a>
+    <a href="About-us.html">Sobre mí</a>
+    <a href="Contact.html">Contacta conmigo</a>
+  </nav>
+    <!-- Carousel Section -->
+  <div class="carousel">
+    <img src="https://via.placeholder.com/800x400?text=Slide+1" alt="Slide 1" class="active">
+    <img src="https://via.placeholder.com/800x400?text=Slide+2" alt="Slide 2">
+    <img src="https://via.placeholder.com/800x400?text=Slide+3" alt="Slide 3">
+    <div class="carousel-controls">
+      <button id="prev">&#9664;</button>
+      <button id="next">&#9654;</button>
+    </div>
+  </div>
   <nav>
     <a href="index.html">Página principal</a>
     <a href="Estética.html">Materiales estética</a>
@@ -217,5 +273,26 @@ footer {
   </a>
 </div>
 </footer>
+    <script>
+    const slides = document.querySelectorAll('.carousel img');
+    let currentSlide = 0;
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
+    document.getElementById('prev').addEventListener('click', () => {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    });
+    document.getElementById('next').addEventListener('click', () => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    });
+    setInterval(() => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }, 5000);
+  </script>
 </body>
 </html>

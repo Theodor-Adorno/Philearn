@@ -62,6 +62,10 @@
       z-index: 3;
     }
     .carousel-controls button {
+      position: absolute;
+      top: 50%; /* Align to the middle */
+      transform: translateY(-50%);
+      z-index: 4; /* Ensure they are above the carousel images */
       background-color: rgba(0, 0, 0, 0.5);
       border: none;
       color: white;

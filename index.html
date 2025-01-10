@@ -139,6 +139,9 @@
     footer img {
       margin-top: 10px;
       width: 80px;
+      pointer-events: none; /* Prevent interaction during slide transitions */
+      visibility: visible; /* Force it to remain visible only in its place */
+      position: relative;
       z-index: 1; /* Ensure it doesn't overlap carousel */
     }
     .footer-links {

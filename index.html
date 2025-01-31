@@ -28,21 +28,20 @@
   z-index: 1;
   pointer-events: none; /* Prevent overlay from blocking interactions */
 }
-        .carousel {
-      position: relative;
-      max-width: 800px;
-      margin: 20px auto;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-      overflow: hidden; /* Prevent content from spilling out */
-      position: relative;
-      z-index: 2;
-    }
+.carousel {
+  position: relative;
+  max-width: 800px;
+  height: 400px; /* Set a fixed height to prevent resizing */
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  overflow: hidden; /* Ensures images don’t spill out */
+  z-index: 2;
+}
 .carousel img {
   width: 100%;
-  height: auto;
-  max-height: 400px;
-  object-fit: cover;
+  height: 100%; /* Ensures all images fill the same height */
+  object-fit: cover; /* Crops images while maintaining aspect ratio */
   opacity: 0; /* Start images as fully transparent */
   position: absolute; /* Stack all slides */
   transition: opacity 0.5s ease-in-out; /* Smooth fade effect */

@@ -11,56 +11,55 @@
       font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
-      background-image: url(https://images.unsplash.com/photo-1535905557558-afc4877a26fc?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?fit=750%2C200&ssl=1); /* Background image */
+      background-image: url(https://images.unsplash.com/photo-1535905557558-afc4877a26fc?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?fit=750%2C200&ssl=1);
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
       color: #333;
       line-height: 1.8;
     }
-.overlay {
-  background-color: rgba(20, 20, 20, 0.7); /* Darker semi-transparent overlay */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  pointer-events: none; /* Prevent overlay from blocking interactions */
-}
-        .carousel {
+    .overlay {
+      background-color: rgba(20, 20, 20, 0.7);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .carousel {
       position: relative;
       max-width: 800px;
       margin: 20px auto;
       border-radius: 8px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-      overflow: hidden; /* Prevent content from spilling out */
-      position: relative;
+      overflow: hidden;
       z-index: 2;
     }
-.carousel img {
-  width: 100%;
-  height: auto;
-  max-height: 400px;
-  object-fit: cover;
-  opacity: 0; /* Start images as fully transparent */
-  position: absolute; /* Stack all slides */
-  transition: opacity 0.5s ease-in-out; /* Smooth fade effect */
-}
-.carousel img.active {
-  opacity: 1; /* Fully visible for the active image */
-  position: relative; /* Bring active slide to the front */
-}
+    .carousel img {
+      width: 100%;
+      height: auto;
+      max-height: 400px;
+      object-fit: cover;
+      opacity: 0;
+      position: absolute;
+      transition: opacity 1s ease-in-out;
+    }
+    .carousel img.active {
+      opacity: 1;
+      position: relative;
+    }
     .content {
       position: relative;
       z-index: 2;
       padding: 20px;
       max-width: 800px;
       margin: 40px auto;
-      background: rgba(20, 20, 20, 0.95); /* Darker almost-black background for text content */
+      background: rgba(20, 20, 20, 0.95);
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
       border-radius: 8px;
-      color: #f5f5f5; /* Light text for readability */
+      color: #f5f5f5;
     }
     header {
       text-align: center;
@@ -77,7 +76,6 @@
       font-size: 1.5em;
       margin: 10px 0 0;
     }
-    /* Navigation Bar */
     nav {
       text-align: center;
       margin-bottom: 20px;
@@ -98,41 +96,27 @@
       background-color: rgba(0, 0, 0, 0.9);
     }
     footer {
-  text-align: center;
-  padding: 20px;
-  background: rgba(51, 51, 51, 0.9); /* Semi-transparent background */
-  color: #fff;
-  margin: 20px 40px; /* Add space around the footer */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
-  position: relative;
-  z-index: 1;
-}
-    footer a {
-      color: #aaa;
-      text-decoration: none;
-    }
-    footer a:hover {
+      text-align: center;
+      padding: 20px;
+      background: rgba(51, 51, 51, 0.9);
       color: #fff;
+      margin: 20px 40px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      position: relative;
+      z-index: 1;
     }
-footer img {
-  margin: 10px auto; /* Center it horizontally and adjust top margin */
-  width: 80px; /* Keep the width consistent */
-  height: auto; /* Maintain aspect ratio */
-  pointer-events: none; /* Prevent any interactions */
-  display: block; /* Ensure it's treated as a block element */
-  position: relative; /* Standard positioning for alignment */
-  z-index: 1; /* Ensure it stays beneath or in proper order */
-}
-    .footer-links {
-      margin-top: 10px;
+    footer img {
+      margin: 10px auto;
+      width: 80px;
+      height: auto;
+      pointer-events: none;
+      display: block;
+      position: relative;
+      z-index: 1;
     }
     .footer-links a {
       margin: 0 10px;
-      display: inline-block;
-    }
-    .social-icons {
-      margin-top: 15px;
     }
     .social-icons a {
       margin: 0 10px;
@@ -145,93 +129,47 @@ footer img {
   </style>
 </head>
 <body>
-  <!-- Overlay -->
   <div class="overlay"></div>
-  <!-- Main Content -->
   <header>
     <h1>Filosofía y Pedagogía</h1>
-    <p>Un espacio dedicado a la reflexión crítica y al análisis educativo, donde la filosofía se encuentra con la práctica docente.</p>
+    <p>Un espacio dedicado a la reflexión crítica y al análisis educativo.</p>
   </header>
-  <!-- Navigation Bar -->
   <nav>
     <a href="index.html">Página principal</a>
     <a href="Estética.html">Materiales estética</a>
     <a href="Media.html">Medios</a>
     <a href="Blog.html">Blog</a>
     <a href="About-us.html">Sobre mí</a>
-    <a href="Contact.html">Contacta conmigo</a>
-  </nav>
-    <!-- Carousel Section -->
-  <div class="carousel">
-    <img src="https://images.unsplash.com/photo-1604882737321-e6937fd6f519?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D/800x400?text=Slide+1" alt="Slide 1" class="active carousel-slide">
-    <img src="https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D/800x400?text=Slide+2" alt="Slide 2" class="carousel-slide">
-    <img src="https://images.unsplash.com/photo-1507537417841-81e85feb9bd2?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D/800x400?text=Slide+3" alt="Slide 3" class="carousel-slide">
-    </div>
-  <!-- Brown Overlay Section -->
-  <div class="content">
-    <section>
-      <h2>Reflexión sobre la Educación</h2>
-      <p>La educación es una herramienta poderosa para transformar la sociedad. A través de enfoques filosóficos y pedagógicos, podemos crear ambientes de aprendizaje inclusivos y significativos, adaptados a las necesidades de cada estudiante.</p>
-      <p>Adicionalmente, dedicamos una sección a la Didáctica General, un ámbito esencial para comprender y mejorar los procesos de enseñanza y aprendizaje.</p>
-      La Didáctica General no solo nos proporciona herramientas para estructurar y facilitar el aprendizaje, sino que también nos invita a repensar el papel del docente y del estudiante en un mundo en constante cambio. Aquí exploraremos conceptos como el diseño curricular, las metodologías activas, la evaluación formativa y la inclusión educativa, conectando la teoría con ejemplos prácticos que enriquecen nuestra práctica.</p>
-      <p>En este espacio, exploramos conceptos clave, metodologías innovadoras y perspectivas críticas que ayudan a moldear el futuro de la educación.</p>
-    </section>
-  </div>
-</section>
-  <!-- Footer -->
-<footer>
-  <p>&copy; 2024 Filosofía y Pedagogía</p>
-  <p>
-    El contenido de este sitio web está registrado bajo una 
-    <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer" class="no-icon">
-      Licencia Internacional Creative Commons Attribution-ShareAlike 4.0
-    </a>.
-  </p>
-  <p>
-    <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer" class="no-icon">
-      <img src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" alt="Licencia Creative Commons">
-    </a>
-  </p>
-  <div class="footer-links">
-    <a href="index.html">Inicio</a>
-    <a href="Estética.html">Materiales Estética</a>
-    <a href="Media.html">Medios</a>
-    <a href="Blog.html">Blog</a>
-    <a href="About-us.html">Sobre mí</a>
     <a href="Contact.html">Contacto</a>
+  </nav>
+  <div class="carousel">
+    <img src="https://images.unsplash.com/photo-1604882737321-e6937fd6f519?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Slide 1" class="active">
+    <img src="https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Slide 2">
+    <img src="https://images.unsplash.com/photo-1507537417841-81e85feb9bd2?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Slide 3">
   </div>
-<div class="social-icons">
-  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-    <i class="fab fa-twitter"></i>
-  </a>
-  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-    <i class="fab fa-facebook"></i>
-  </a>
-  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-    <i class="fab fa-linkedin"></i>
-  </a>
-</div>
-</footer>
-    <script>
-const slides = document.querySelectorAll('.carousel-slide');
-let currentSlide = 0;
-function showSlide(index) {
-  slides.forEach((slide, i) => {
-    slide.classList.toggle('active', i === index);
-  });
-}
-document.getElementById('prev').addEventListener('click', () => {
-  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-  showSlide(currentSlide);
-});
-document.getElementById('next').addEventListener('click', () => {
-  currentSlide = (currentSlide + 1) % slides.length;
-  showSlide(currentSlide);
-});
-setInterval(() => {
-  currentSlide = (currentSlide + 1) % slides.length;
-  showSlide(currentSlide);
-}, 5000); // Adjust interval time as needed
+  <footer>
+    <p>&copy; 2024 Filosofía y Pedagogía</p>
+    <p>Contenido bajo 
+      <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Licencia Creative Commons</a>.
+    </p>
+    <div class="social-icons">
+      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </footer>
+  <script>
+    const slides = document.querySelectorAll('.carousel img');
+    let currentSlide = 0;
+
+    function showSlide() {
+      slides.forEach((slide, index) => {
+        slide.classList.remove('active');
+        if (index === currentSlide) slide.classList.add('active');
+      });
+      currentSlide = (currentSlide + 1) % slides.length;
+    }
+    setInterval(showSlide, 5000);
   </script>
 </body>
 </html>

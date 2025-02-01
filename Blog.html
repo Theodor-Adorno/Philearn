@@ -49,6 +49,12 @@
     header h1 {
       font-size: 3em;
     }
+audio {
+  width: 100%; /* Makes it responsive */
+  max-width: 400px; /* Sets a reasonable max width */
+  display: block;
+  margin: 10px auto; /* Centers the audio player */
+}
 .back-button {
   position: fixed; /* Keeps the button fixed in the viewport */
   top: 20px; /* Distance from the top edge */
@@ -64,7 +70,6 @@
   transition: background-color 0.3s; /* Smooth hover effect */
   z-index: 1000; /* Ensures it appears above other elements */
 }
-
 .back-button:hover {
   background-color: rgba(51, 51, 51, 1); /* Fully opaque on hover */
   color: #fff; /* Keep text white */
@@ -176,6 +181,14 @@ footer {
       <p><a href="downloads/En qué lo voy a aplicar.pdf" target="_blank">Ver reflexión</a></p>
     </div>
   </div>
+</section>
+<section>
+  <h2>Primera edición del Podcast sobre educación - Invitada estadounidense</h2>
+  <p>Escucha nuestra primera edición del podcast donde discutimos temas clave de la educación con nuestra invitada especial.</p>
+  <audio controls>
+    <source src="downloads/AudioPodcast.mp3" type="audio/mpeg">
+    Tu navegador no soporta el elemento de audio. <a href="downloads/podcast-educacion.mp3" target="_blank">Descargar aquí</a>
+  </audio>
 </section>
     </main>
   </div>

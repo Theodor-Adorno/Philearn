@@ -55,6 +55,22 @@ audio {
   display: block;
   margin: 10px auto; /* Centers the audio player */
 }
+#quiz button {
+  background-color: #4e54c8;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+#quiz button:hover {
+  background-color: #3b3fb5;
+}
+#quiz p {
+  font-size: 1.2rem;
+}
 .back-button {
   position: fixed; /* Keeps the button fixed in the viewport */
   top: 20px; /* Distance from the top edge */
@@ -203,6 +219,24 @@ iframe {
     <a href="https://soundcloud.com/i-igo-perez-urien/audio-podcast-comillas" title="Audio Podcast Comillas" target="_blank" style="color: #cccccc; text-decoration: none;">Audio Podcast Comillas</a>
   </div>
 </section>
+<section>
+  <h2>📚 ¿Cuánto sabes sobre Filosofía y Pedagogía?</h2>
+  <p>Responde a estas preguntas para probar tu conocimiento.</p>
+  
+  <div id="quiz">
+    <p><strong>1. ¿Quién escribió "La República"?</strong></p>
+    <button onclick="checkAnswer(1, 'Platon')">Platón</button>
+    <button onclick="checkAnswer(1, 'Aristoteles')">Aristóteles</button>
+    <button onclick="checkAnswer(1, 'Descartes')">Descartes</button>
+    <p id="feedback1"></p>
+
+    <p><strong>2. ¿Qué pedagogía defendía Paulo Freire?</strong></p>
+    <button onclick="checkAnswer(2, 'Liberadora')">Liberadora</button>
+    <button onclick="checkAnswer(2, 'Tradicional')">Tradicional</button>
+    <button onclick="checkAnswer(2, 'Constructivista')">Constructivista</button>
+    <p id="feedback2"></p>
+  </div>
+</section>
     </main>
   </div>
   <footer>
@@ -240,5 +274,19 @@ iframe {
     </a>
   </p>
 </footer>
+<script>
+  function checkAnswer(questionNumber, selectedAnswer) {
+    let correctAnswers = {
+      1: "Platon",
+      2: "Liberadora"
+    };
+    let feedbackId = "feedback" + questionNumber;
+    if (selectedAnswer === correctAnswers[questionNumber]) {
+      document.getElementById(feedbackId).innerText = "✅ ¡Correcto!";
+    } else {
+      document.getElementById(feedbackId).innerText = "❌ Incorrecto. Inténtalo de nuevo.";
+    }
+  }
+</script>
 </body>
 </html>

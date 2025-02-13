@@ -306,7 +306,7 @@ iframe {
   function checkAnswer(questionNumber, selectedAnswer) {
     let correctAnswers = {
       1: "Platon",
-      2: "Liberadora"
+      2: "Liberadora",
       3: "Dewey",
       4: "Finalidad sin fin",
       5: "Autonomía del arte",
@@ -314,11 +314,47 @@ iframe {
       7: "Lo apolíneo y lo dionisíaco",
       8: "El gusto está determinado socialmente"
     };
+
     let feedbackId = "feedback" + questionNumber;
+    let feedbackMessages = {
+      1: {
+        correct: "✅ ¡Correcto! Platón escribió 'La República', una de las obras fundamentales de la filosofía política.",
+        incorrect: "❌ No es correcto. 'La República' fue escrita por Platón, donde plantea su visión de la justicia y el Estado ideal."
+      },
+      2: {
+        correct: "✅ ¡Exacto! Paulo Freire defendía la pedagogía liberadora, basada en el diálogo y la concienciación crítica.",
+        incorrect: "❌ No es correcto. La pedagogía liberadora de Freire se oponía a la educación bancaria, promoviendo el aprendizaje activo."
+      },
+      3: {
+        correct: "✅ ¡Bien hecho! John Dewey destacó la importancia de la experiencia en la educación y la estética.",
+        incorrect: "❌ Incorrecto. Kant influyó en la estética, pero el concepto de 'experiencia estética' lo desarrolló John Dewey en el pragmatismo."
+      },
+      4: {
+        correct: "✅ ¡Correcto! Kant describe lo bello como una 'finalidad sin fin', es decir, algo que se disfruta sin un propósito concreto.",
+        incorrect: "❌ No es correcto. Kant no veía la belleza como 'expresión subjetiva del genio' ni 'imitación de la naturaleza', sino como una 'finalidad sin fin'."
+      },
+      5: {
+        correct: "✅ ¡Acertaste! Adorno defendía la 'autonomía del arte', rechazando la instrumentalización de la cultura.",
+        incorrect: "❌ No es correcto. Para Adorno, el arte debía ser autónomo y no depender de funciones prácticas o comerciales."
+      },
+      6: {
+        correct: "✅ ¡Muy bien! Hegel consideraba el arte como una manifestación sensible de la Idea, ligada a la historia y la evolución del espíritu.",
+        incorrect: "❌ Incorrecto. Para Hegel, el arte no era solo placer sensorial; era una forma de expresión filosófica y cultural de la Idea."
+      },
+      7: {
+        correct: "✅ ¡Exacto! Nietzsche hablaba de lo apolíneo (orden, forma) y lo dionisíaco (caos, pasión) en el arte.",
+        incorrect: "❌ No es correcto. Para Nietzsche, el arte combina lo apolíneo (armonía) y lo dionisíaco (exceso y emoción)."
+      },
+      8: {
+        correct: "✅ ¡Correcto! Bourdieu argumentaba que el gusto no es puramente individual, sino determinado por la estructura social.",
+        incorrect: "❌ Incorrecto. Bourdieu demostró que el gusto artístico es un reflejo de la posición social, no solo una elección personal."
+      }
+    };
+
     if (selectedAnswer === correctAnswers[questionNumber]) {
-      document.getElementById(feedbackId).innerText = "✅ ¡Correcto!";
+      document.getElementById(feedbackId).innerText = feedbackMessages[questionNumber].correct;
     } else {
-      document.getElementById(feedbackId).innerText = "❌ Incorrecto. Inténtalo de nuevo.";
+      document.getElementById(feedbackId).innerText = feedbackMessages[questionNumber].incorrect;
     }
   }
 </script>

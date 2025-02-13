@@ -56,20 +56,30 @@ audio {
   margin: 10px auto; /* Centers the audio player */
 }
 #quiz button {
-  background-color: #4e54c8;
+  background: linear-gradient(135deg, #9c6d2f, #c49b5f); /* Tonos dorados/tierra */
   color: white;
   border: none;
-  padding: 10px 20px;
-  margin: 5px;
-  border-radius: 5px;
+  padding: 12px 24px;
+  margin: 8px;
+  border-radius: 10px; /* Botón más estilizado */
   cursor: pointer;
   font-size: 1rem;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out; /* Transición suave */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
 }
 #quiz button:hover {
-  background-color: #3b3fb5;
+  background: linear-gradient(135deg, #c49b5f, #e0bf7e);
+  transform: scale(1.05); /* Efecto de crecimiento al pasar el mouse */
+}
+#quiz button:active {
+  transform: scale(0.95); /* Leve efecto de presión al hacer clic */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 #quiz p {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #2c2c2c;
 }
 .back-button {
   position: fixed; /* Keeps the button fixed in the viewport */
